@@ -1,0 +1,11 @@
+{
+  "name": "web-kit",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "git@github.com:senteca/web-kit.git",
+  "author": "DannyDobrev <danny.dobrev@sentecacommerce.com>",
+  "license": "MIT"
+}
