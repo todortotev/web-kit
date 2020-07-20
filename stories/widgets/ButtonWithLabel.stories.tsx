@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonWithLabel from "./ButtonWithLabel";
+import ButtonWithLabel from "../../src/widgets/ButtonWithLabel";
 
 export default { title: "ButtonWithLabel", component: ButtonWithLabel };
 

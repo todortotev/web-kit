@@ -5,7 +5,7 @@ import typescript from "rollup-plugin-typescript2";
 import pkg from "./package.json";
 
 export default {
-  input: "index.ts",
+  input: './src/index.ts',
   output: [
     {
       file: pkg.main,
@@ -16,7 +16,7 @@ export default {
       format: "es",
     },
   ],
-  external: ["react"],
+  external: ["react", "styled-components"],
   plugins: [
     peerDepsExternal(),
     resolve(),

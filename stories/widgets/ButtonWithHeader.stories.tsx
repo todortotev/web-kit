@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonWithHeader from "./ButtonWithHeader";
+import ButtonWithHeader from "../../src/widgets/ButtonWithHeader";
 
 export default { title: "ButtonWithHeader", component: ButtonWithHeader };
 

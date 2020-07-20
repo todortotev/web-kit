@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Header } from 'components';
+import Button from '../../components/Button';
+import Header from '../../components/Header';
 
 const ButtonWithLabel = () => (
   <>
