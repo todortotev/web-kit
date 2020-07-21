@@ -1,6 +1,6 @@
 {
   "name": "@sentecacommerce/web-kit",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "scripts": {
     "build": "node createIndexExport && rm -rf lib && rollup -c rollup.config.ts",
     "storybook": "start-storybook -p 6007"
@@ -36,6 +36,7 @@
     "type": "git",
     "url": "https://github.com/senteca/web-kit.git"
   },
+  "files": ["lib/*"],
   "peerDependencies": {
     "react": ">=16.8",
     "react-dom": ">=16.8",
