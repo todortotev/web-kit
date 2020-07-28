@@ -61,7 +61,7 @@ const ListItem: any = styled.li`
 const ListLink = styled.a`
   font-size: 16px;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: .5px;
   text-transform: uppercase;
   vertical-align: middle;
