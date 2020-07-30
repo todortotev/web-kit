@@ -219,6 +219,37 @@ const MockProps: Props = {
         ]
       ]
     },
+    {
+      menu_name: 'test 6',
+      menu_url: '#',
+      menus: [
+        [
+          {
+            menu_type: 'hasLeftBorder',
+            menus: [
+              {
+                menu_name: 'test 6 col 1 row 1',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'test 6 col 1 row 1 subcat 1',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'test 6 col 1 row 1 subcat 2',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'test 6 col 1 row 1 subcat 3',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    }
   ]
 }
 

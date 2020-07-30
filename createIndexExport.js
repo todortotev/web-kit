@@ -1,8 +1,7 @@
 const fs = require('fs');
-const path = require('path');
 
 const prefix = 'src';
-const packages = ['components', 'widgets']
+const packages = ['components', 'widgets', 'utils', 'icons']
 
 function createIndexExport() {
   if (fs.existsSync('src/index.ts')) {
