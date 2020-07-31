@@ -255,4 +255,9 @@ const MockProps: Props = {
 
 export default { title: "Navbar.sd", component: Navbar_sd };
 
-export const Scene = () => <Navbar_sd {...MockProps}></Navbar_sd>;
+export const Scene = () => (
+  <>
+    <Navbar_sd {...MockProps}></Navbar_sd>
+    <style>{`body { margin : 0}`}</style>
+  </>
+);

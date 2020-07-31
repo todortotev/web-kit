@@ -18,7 +18,7 @@ const SearchBar = () => {
 
 const AbsoluteContainer = styled.div`
   position: absolute;
-  right: 20px;
+  right: 24px;
   top: 15px;
 `;
 
