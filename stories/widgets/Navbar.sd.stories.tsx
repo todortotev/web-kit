@@ -3,6 +3,66 @@ import Navbar_sd from "../../src/widgets/Navbar_sd";
 import { Props } from '../../src/widgets/Navbar_sd/types';
 
 const MockProps: Props = {
+  top_nav_strip: {
+    shops: {
+      label: 'Магазини',
+      url: '#',
+      items: [
+        {
+          label: 'Магазин 1',
+          url: '#'
+        },
+        {
+          label: 'Магазин 2',
+          url: '#'
+        }
+      ]
+    },
+    userAccount: {
+      label: 'Профил',
+      url: '#',
+      items: [
+        {
+          label: 'Опция 1',
+          url: '#'
+        },
+        {
+          label: 'Опция 2',
+          url: '#'
+        },
+        {
+          label: 'Опция 3',
+          url: '#'
+        },
+        {
+          label: 'Опция 4',
+          url: '#'
+        }
+      ]
+    },
+    basket: {
+      label: 'Кошница',
+      url: '#'
+    },
+    locations: {
+      label: 'България',
+      url: '#',
+      items: [
+        {
+          label: 'България',
+          url: '#',
+        },
+        {
+          label: 'Greece',
+          url: '#',
+        },
+        {
+          label: 'Romania',
+          url: '#',
+        }
+      ]
+    }
+  },
   menu_items: [
     {
       menu_name: 'test 1',
@@ -258,6 +318,6 @@ export default { title: "Navbar.sd", component: Navbar_sd };
 export const Scene = () => (
   <>
     <Navbar_sd {...MockProps}></Navbar_sd>
-    <style>{`body { margin : 0}`}</style>
+    <style>{`body { margin : 0; font-family: Helvetica}`}</style>
   </>
 );

@@ -6,8 +6,9 @@ import Link from 'next/link';
 
 const NavCategoriesListItem = (props: NavCategoriesListItemProps) => {
   const { item, toggleActive } = props;
+  const onMouseLeave = () => toggleActive('')();
   return (
-    <ListItem onMouseOver={toggleActive(item.menu_name)} active={props.active}>
+    <ListItem onMouseEnter={toggleActive(item.menu_name)} active={props.active} onMouseLeave={onMouseLeave}>
       <Link passHref href={extractPathFromUrl(item.menu_url)} as={item.menu_url}>
         <>
           <ListLink aria-label={item.menu_name}>

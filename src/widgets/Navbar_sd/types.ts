@@ -13,6 +13,20 @@
 
 export interface Props {
   menu_items: MenuItem[];
+  top_nav_strip: TopNavStrip;
+}
+
+export type TopNavStrip = {
+  shops: TopNavStripItem;
+  userAccount: TopNavStripItem;
+  basket: TopNavStripItem;
+  locations: TopNavStripItem;
+}
+
+export interface TopNavStripItem {
+  label: string;
+  url: string;
+  items?: TopNavStripItem[];
 }
 
 export type MenuItem = {

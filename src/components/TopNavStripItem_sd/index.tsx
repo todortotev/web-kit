@@ -4,19 +4,20 @@ import { Props } from './types';
 import Link from 'next/link';
 
 const TopNavStripItem_sd = (props: Props) => {
-  const { icon, label, menuItems, url, active, toggleActive, popupBeginsFrom = 'center' } = props;
+  const { icon, label, hideLabel, menuItems, url, active, toggleActive, popupBeginsFrom = 'center' } = props;
+  const onMouseLeave = () => toggleActive('')();
   return (
-    <Container onMouseOver={toggleActive(label)} active={active} hasMenuItems={menuItems && menuItems.length}>
+    <Container hideLabel={hideLabel} onMouseEnter={toggleActive(label)} active={active} hasMenuItems={menuItems && menuItems.length} onMouseLeave={onMouseLeave}>
       <Link passHref href={url}>
         <ItemLink active={active}>
           {icon ? icon : null}
-          {label}
+          {hideLabel ? null : label}
         </ItemLink>
       </Link>
-      <MenuItemsPopup active={active} popupBeginsFrom={popupBeginsFrom}>
+      <MenuItemsPopup active={active && Array.isArray(menuItems)} popupBeginsFrom={popupBeginsFrom}>
         <MenuItemsContent>
           <MenuItemsList>
-            {menuItems && menuItems.map(item => (
+            {Array.isArray(menuItems) && menuItems.map(item => (
               <li>
                 <Link href={item.url} passHref>
                   <a aria-label={item.label}>
@@ -35,6 +36,7 @@ const TopNavStripItem_sd = (props: Props) => {
 const Container: any = styled.li`
   margin-top: 0;
   margin-bottom: 0;
+  margin-right: ${(props: any) => props.hideLabel ? '-5px' : 0};
   position: relative;
   vertical-align: middle;
   display: inline-block;
@@ -64,7 +66,7 @@ const ItemLink: any = styled.a`
   & svg {
     width: 14px;
     height: 14px;
-    margin-right: 6px;
+    margin-right: 8px;
     fill: ${(props: any) => props.active ? '#111' : '#757575'};
   }
 `;
@@ -101,6 +103,9 @@ const MenuItemsList = styled.ul`
     color: #111;
     cursor: pointer;
     text-decoration: none;
+    &:hover {
+      color: #757575;
+    }
   }
 `;
 

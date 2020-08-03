@@ -11,7 +11,9 @@ function createIndexExport() {
   packages.forEach(async (path) => {
     const dir = await fs.promises.opendir(`${prefix}/${path}`);
     for await (const dirent of dir) {
-      logStream.write(`export { default as ${dirent.name} } from './${path}/${dirent.name}'\n`);
+      if(dirent.name.charAt(0) !== '.' && !dirent.name.endsWith('.ts')) {
+        logStream.write(`export { default as ${dirent.name} } from './${path}/${dirent.name}'\n`);
+      }
     }
   });
 }

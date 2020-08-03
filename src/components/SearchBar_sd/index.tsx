@@ -20,6 +20,9 @@ const AbsoluteContainer = styled.div`
   position: absolute;
   right: 24px;
   top: 15px;
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 const FormGroupContainer = styled.div`

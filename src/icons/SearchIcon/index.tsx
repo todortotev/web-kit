@@ -1,7 +1,8 @@
 import React from 'react';
+import { IconProps } from '../types';
 
-export default (() => (
-  <svg version="1.1" id="Capa_1" x="18px" y="18px" width="18px" height="18px"
+export default (({ width = '18px', height = '18px' }: IconProps) => (
+  <svg version="1.1" width={width} height={height}
     viewBox="0 0 512 512">
     <g>
       <g>

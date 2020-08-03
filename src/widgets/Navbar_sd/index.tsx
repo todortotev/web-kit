@@ -7,11 +7,22 @@ import Logo from '../../icons/Logo_sd';
 import { Props } from './types';
 import Link from 'next/link';
 import UserIcon from '../../icons/UserIcon_sd';
+import BasketIcon from '../../icons/Basket_sd';
+import LocationPin from '../../icons/LocationPin_sd';
+import HamburgerIcon from '../../icons/Hamburger_sd';
+import IconButton from '../../components/IconButton';
+import SearchIcon from '../../icons/SearchIcon';
+import MobileNavList from '../../components/MobileNavList_sd';
 
 const Navbar = (props: Props) => {
-  const { menu_items } = props;
+  const { menu_items, top_nav_strip } = props;
+  const { shops, userAccount, basket, locations } = top_nav_strip;
   const [active, setActive] = React.useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  const closeMobileMenu = () => setMobileMenuOpen(false);
   const toggleActive = (name: string) => () => setActive(name);
+  const noOp = (e: any) => console.log(e);
 
   const [activeTopStrip, setActiveTopStrip] = React.useState('');
   const toggleActiveTopStrip = (name: string) => () => setActiveTopStrip(name);
@@ -21,36 +32,12 @@ const Navbar = (props: Props) => {
       <TopNavStripContainer>
         <TopNavStripWrapper>
           <TopNavStripGroup left>
-            <TopNavStripItem popupBeginsFrom="left" toggleActive={toggleActiveTopStrip} active={activeTopStrip === 'Магазини'} url="#" label="Магазини" menuItems={[
-              {
-                label: 'Магазин 1',
-                url: '#'
-              },
-              {
-                label: 'Магазин 2',
-                url: '#'
-              }
-            ]}></TopNavStripItem>
+            <TopNavStripItem popupBeginsFrom="left" toggleActive={toggleActiveTopStrip} active={activeTopStrip === shops.label} url={shops.url} label={shops.label} menuItems={shops.items} />
           </TopNavStripGroup>
           <TopNavStripGroup>
-            <TopNavStripItem icon={<UserIcon />} toggleActive={toggleActiveTopStrip} active={activeTopStrip === 'Профил'} url="#" label="Профил" menuItems={[
-              {
-                label: 'Опция 1',
-                url: '#'
-              },
-              {
-                label: 'Опция 2',
-                url: '#'
-              },
-              {
-                label: 'Опция 3',
-                url: '#'
-              },
-              {
-                label: 'Опция 4',
-                url: '#'
-              }
-            ]}></TopNavStripItem>
+            <TopNavStripItem icon={<UserIcon />} toggleActive={toggleActiveTopStrip} active={activeTopStrip === userAccount.label} url={userAccount.url} label={userAccount.label} menuItems={userAccount.items} />
+            <TopNavStripItem icon={<BasketIcon />} toggleActive={toggleActiveTopStrip} active={activeTopStrip === basket.label} url={basket.url} label={basket.label} hideLabel />
+            <TopNavStripItem icon={<LocationPin />} toggleActive={toggleActiveTopStrip} active={activeTopStrip === locations.label} url={locations.url} label={locations.label} menuItems={locations.items} />
           </TopNavStripGroup>
         </TopNavStripWrapper>
       </TopNavStripContainer>
@@ -68,6 +55,14 @@ const Navbar = (props: Props) => {
           ))}
         </NavCategoriesList>
         <SearchBar />
+        <MobileNavItemsContainer>
+          <MobileNavItemsWrapper>
+            <IconButton icon={<SearchIcon width="25px" height="25px" />} onClick={noOp} />
+            <IconButton icon={<BasketIcon width="25px" height="25px" />} onClick={noOp} />
+            <IconButton icon={<HamburgerIcon width="25px" height="25px" />} onClick={toggleMobileMenu} />
+          </MobileNavItemsWrapper>
+        </MobileNavItemsContainer>
+        <MobileNavList menu_items={menu_items} open={mobileMenuOpen} onClose={closeMobileMenu} />
       </CategoriesStripContainer>
     </NavContainer>
   )
@@ -81,6 +76,36 @@ const NavContainer = styled.div`
   display: block;
 `;
 
+const MobileNavItemsContainer = styled.div`
+  display: none;
+  @media (max-width: 1024px) {
+    display: block;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    &::before {
+      content: "";
+      display: block;
+      z-index: -1;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      visibility: hidden;
+    }
+  }
+`;
+
+const MobileNavItemsWrapper = styled.div`
+  display: none;
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 24px;
+  }
+`;
+
 const TopNavStripContainer = styled.div`
   height: 40px;
   box-shadow: inset 0 -1px 0 0 #e5e5e5;
@@ -91,6 +116,9 @@ const TopNavStripContainer = styled.div`
   padding-left: 16px;
   align-items: center;
   display: flex;
+  @media (max-width: 1024px) {
+    display: none;
+  }
   &::before {
     content: "";
     display: table;
@@ -126,7 +154,6 @@ const TopNavStripWrapper = styled.div`
 const CategoriesStripContainer = styled.div`
   position: relative;
   min-height: 48px;
-  /* min-height: 72px; */ /* FOR MOBILE */
   box-shadow: inset 0 -1px 0 0 #e5e5e5;
   margin-left: -8px;
   margin-right: -8px;
@@ -149,12 +176,15 @@ text-align: center;
 position: relative;
 padding-right: 50px;
 box-sizing: border-box;
+@media (max-width: 1024px) {
+  display: none;
+}
 `;
 
 const LogoContainer = styled.div`
   display: block;
   position: absolute;
-  left: 0;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
 `;
