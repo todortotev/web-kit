@@ -4,6 +4,7 @@ import { Props } from './types';
 import useClickOutside from '../../hooks/useClickOutside';
 import menuToList from '../../utils/menuToList_sd';
 import UserIcon from '../../icons/UserIcon_sd';
+import Arrow from '../../icons/Arrow';
 
 const MobileNavList = (props: Props) => {
   const { menu_items, open, onClose } = props;
@@ -28,29 +29,29 @@ const MobileNavList = (props: Props) => {
   };
 
   const setParentMenu = () => {
-    if(activeMenu.menus) {
+    if (activeMenu.menus) {
       setActiveMenuParent(activeMenu.parent);
     }
-    if(Array.isArray(activeMenu)) {
+    if (Array.isArray(activeMenu)) {
       setActiveMenuParent(activeMenu[0].parent);
     }
   }
 
   const getMenuByParent = (parent: any) => (res: any, node: any) => {
-    if(node.parent === parent) {
-     return [...res, node];
+    if (node.parent === parent) {
+      return [...res, node];
     }
-    if(Array.isArray(node)) {
-     return node.reduce(getMenuByParent(parent), res);
+    if (Array.isArray(node)) {
+      return node.reduce(getMenuByParent(parent), res);
     }
-    if(node.menus) {
-     return node.menus.reduce(getMenuByParent(parent), res);
+    if (node.menus) {
+      return node.menus.reduce(getMenuByParent(parent), res);
     }
     return res;
-}
+  }
 
   const goBack = (e: any) => {
-    if(!activeMenuParent) {
+    if (!activeMenuParent) {
       return setActiveMenu(menuList);
     }
     setActiveMenu(menuList.reduce(getMenuByParent(activeMenuParent), []));
@@ -62,21 +63,21 @@ const MobileNavList = (props: Props) => {
   return (
     <Container open={open} ref={containerRef}>
       <List>
-      {isRoot() ? null : <ListItem back onClick={goBack}>Назад</ListItem>}
-      {isRoot() ? <ListItem special><div><UserIcon/> Профил</div>{'>'}</ListItem> : null}
-      {activeMenu.map((m: any) => {
-        if (Array.isArray(m)) {
-          return m.map((menuArr: any) => {
-            return menuArr.menus.map((menu: any) => {
-              return (<ListItem onClick={toggleMenu(menu)}><div>{menu.menu_name}</div>{menu.menus ? '>' : null}</ListItem>)
+        {isRoot() ? null : <ListItem back onClick={goBack}><div><Arrow height="10px" /><span>Назад</span></div></ListItem>}
+        {isRoot() ? <ListItem special><div><UserIcon /> Профил</div><Arrow height="10px" /></ListItem> : null}
+        {activeMenu.map((m: any) => {
+          if (Array.isArray(m)) {
+            return m.map((menuArr: any) => {
+              return menuArr.menus.map((menu: any) => {
+                return (<ListItem onClick={toggleMenu(menu)}><div>{menu.menu_name}</div>{menu.menus ? <Arrow height="10px" /> : null}</ListItem>)
+              })
             })
-          })
-        } else {
-          return (
-            <ListItem onClick={toggleMenu(m)}><div>{m.menu_name}</div>{m.menus ? '>' : null}</ListItem>
-          )
-        }
-      })}
+          } else {
+            return (
+              <ListItem onClick={toggleMenu(m)}><div>{m.menu_name}</div>{m.menus ? <Arrow height="10px" /> : null}</ListItem>
+            )
+          }
+        })}
       </List>
     </Container>
   )
@@ -125,9 +126,11 @@ const ListItem: any = styled.li`
   padding: 14px 20px;
   box-sizing: border-box;
   text-transform: ${(props: any) => props.special ? 'none' : 'uppercase'};
+  align-items: center;
   cursor: pointer;
   & div svg {
-    margin-right: 8px;
+    margin-right: ${(props: any) => props.back || props.special ? '8px' : '0'};
+    transform: ${(props: any) => props.back ? 'rotate(180deg)' : 'rotate(0deg)'};
   }
 `;
 
