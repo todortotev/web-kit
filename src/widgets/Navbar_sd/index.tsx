@@ -74,6 +74,7 @@ const NavContainer = styled.div`
   padding-left: 8px;
   padding-right: 8px;
   display: block;
+  box-sizing: border-box;
 `;
 
 const MobileNavItemsContainer: any = styled.div`
