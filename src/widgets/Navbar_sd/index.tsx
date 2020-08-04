@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import NavCategoriesListItem from '../../components/NavCategoriesListItem_sd';
 import TopNavStripItem from '../../components/TopNavStripItem_sd';
 import SearchBar from '../../components/SearchBar_sd';
@@ -55,7 +55,7 @@ const Navbar = (props: Props) => {
           ))}
         </NavCategoriesList>
         <SearchBar />
-        <MobileNavItemsContainer>
+        <MobileNavItemsContainer mobileMenuOpen={mobileMenuOpen}>
           <MobileNavItemsWrapper>
             <IconButton icon={<SearchIcon width="25px" height="25px" />} onClick={noOp} />
             <IconButton icon={<BasketIcon width="25px" height="25px" />} onClick={noOp} />
@@ -76,7 +76,7 @@ const NavContainer = styled.div`
   display: block;
 `;
 
-const MobileNavItemsContainer = styled.div`
+const MobileNavItemsContainer: any = styled.div`
   display: none;
   @media (max-width: 1024px) {
     display: block;
@@ -92,6 +92,15 @@ const MobileNavItemsContainer = styled.div`
       left: 0;
       bottom: 0;
       visibility: hidden;
+      opacity: 0;
+      transition: opacity .2s,visibility 0ms;
+      ${(props: any) => props.mobileMenuOpen && css`
+        background: rgba(0,0,0,.4);
+        visibility: visible;
+        z-index: 1;
+        opacity: 1;
+        transition: opacity .2s,visibility 0ms;
+      `}
     }
   }
 `;
