@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar_sd from "../../src/widgets/Navbar_sd";
 import { Props } from '../../src/widgets/Navbar_sd/types';
+import TopCta from '../../src/components/TopCta_sd';
 
 const MockProps: Props = {
   top_nav_strip: {
@@ -318,6 +319,7 @@ export default { title: "Navbar.sd", component: Navbar_sd };
 export const Scene = () => (
   <>
     <Navbar_sd {...MockProps}></Navbar_sd>
+    <TopCta />
     <style>{`body { margin : 0; font-family: Helvetica}`}</style>
   </>
 );
