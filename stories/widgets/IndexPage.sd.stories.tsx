@@ -68,26 +68,26 @@ const MockNavbarProps: NavbarProps = {
   },
   menu_items: [
     {
-      menu_name: 'test 1',
+      menu_name: 'Нови',
       menu_url: '#',
       menus: [
         [
           {
             menus: [
               {
-                menu_name: 'test 1 col 0 row 1',
+                menu_name: 'Летни предложения',
                 menu_url: '#'
               },
               {
-                menu_name: 'test 1 col 0 row 2',
+                menu_name: 'Нови продукти',
                 menu_url: '#'
               },
               {
-                menu_name: 'test 1 col 0 row 3',
+                menu_name: 'Сезонни намаления',
                 menu_url: '#'
               },
               {
-                menu_name: 'test 1 col 0 row 4',
+                menu_name: 'Спорт',
                 menu_url: '#'
               }
             ]
@@ -96,37 +96,37 @@ const MockNavbarProps: NavbarProps = {
             menu_type: 'hasLeftBorder',
             menus: [
               {
-                menu_name: 'test 1 col 1 row 1',
+                menu_name: 'Обувки',
                 menu_url: '#',
                 menus: [
                   {
-                    menu_name: 'test 1 col 1 row 1 subcat 1',
+                    menu_name: 'Ежедневни обукви',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 1 col 1 row 1 subcat 2',
+                    menu_name: 'Ботуши',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 1 col 1 row 1 subcat 3',
+                    menu_name: 'Сандали',
                     menu_url: '#'
                   }
                 ]
               },
               {
-                menu_name: 'test 1 col 1 row 2',
+                menu_name: 'Аксесоари',
                 menu_url: '#',
                 menus: [
                   {
-                    menu_name: 'test 1 col 1 row 2 subcat 1',
+                    menu_name: 'Чанти',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 1 col 1 row 2 subcat 2',
+                    menu_name: 'Колани',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 1 col 1 row 2 subcat 3',
+                    menu_name: 'Чорапи',
                     menu_url: '#'
                   }
                 ]
@@ -138,19 +138,19 @@ const MockNavbarProps: NavbarProps = {
           {
             menus: [
               {
-                menu_name: 'test 1 col 2 row 1',
+                menu_name: 'Облекло',
                 menu_url: '#',
                 menus: [
                   {
-                    menu_name: 'test 1 col 2 row 1 subcat 1',
+                    menu_name: 'Блузи',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 1 col 2 row 1 subcat 2',
+                    menu_name: 'Тениски',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 1 col 2 row 1 subcat 3',
+                    menu_name: 'Панталони',
                     menu_url: '#'
                   }
                 ]
@@ -161,149 +161,383 @@ const MockNavbarProps: NavbarProps = {
       ]
     },
     {
-      menu_name: 'test 2',
+      menu_name: 'Мъже',
       menu_url: '#',
       menus: [
         [
+          {
+            menus: [
+              {
+                menu_name: 'Мъжко Облекло',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Блузи',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Панталони',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Анцузи',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            menus: [
+              {
+                menu_name: 'Мъжки Обувки',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Ежедневни',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Джапанки',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Сандали',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            menus: [
+              {
+                menu_name: 'Мъжки Аксесоари',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Раници',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Чорапи',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Портмонета',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      menu_name: 'Жени',
+      menu_url: '#',
+      menus: [
+        [
+          {
+            menus: [
+              {
+                menu_name: 'Женско Облекло',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Блузи',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Панталони',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Анцузи',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            menus: [
+              {
+                menu_name: 'Женски Обувки',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Ежедневни',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Джапанки',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Сандали',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            menus: [
+              {
+                menu_name: 'Женски Аксесоари',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Раници',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Чорапи',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Портмонета',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      menu_name: 'Деца',
+      menu_url: '#',
+      menus: [
+        [
+          {
+            menus: [
+              {
+                menu_name: 'Детско Облекло',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Блузи',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Панталони',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Анцузи',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            menus: [
+              {
+                menu_name: 'Детски Обувки',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Ежедневни',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Джапанки',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Сандали',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            menus: [
+              {
+                menu_name: 'Детски Аксесоари',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Раници',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Чорапи',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Портмонета',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      menu_name: 'Лято',
+      menu_url: '#',
+      menus: [
+        [
+          {
+            menus: [
+              {
+                menu_name: 'Облекло',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Блузи',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Панталони',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Анцузи',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            menus: [
+              {
+                menu_name: 'Обувки',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Ежедневни',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Джапанки',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Сандали',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            menus: [
+              {
+                menu_name: 'Аксесоари',
+                menu_url: '#',
+                menus: [
+                  {
+                    menu_name: 'Раници',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Чорапи',
+                    menu_url: '#'
+                  },
+                  {
+                    menu_name: 'Портмонета',
+                    menu_url: '#'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      menu_name: 'Колекции',
+      menu_url: '#',
+      menus: [
+        [
+          {
+            menus: [
+              {
+                menu_name: 'Air Jordan',
+                menu_url: '#'
+              },
+              {
+                menu_name: 'React',
+                menu_url: '#'
+              },
+              {
+                menu_name: 'Pegasus',
+                menu_url: '#'
+              }
+            ]
+          },
           {
             menu_type: 'hasLeftBorder',
             menus: [
               {
-                menu_name: 'test 2 col 1 row 1',
+                menu_name: 'Облекло',
                 menu_url: '#',
                 menus: [
                   {
-                    menu_name: 'test 2 col 1 row 1 subcat 1',
+                    menu_name: 'Блузи',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 2 col 1 row 1 subcat 2',
+                    menu_name: 'Панталони',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 2 col 1 row 1 subcat 3',
+                    menu_name: 'Анцузи',
                     menu_url: '#'
                   }
                 ]
               }
             ]
-          }
-        ]
-      ]
-    },
-    {
-      menu_name: 'test 3',
-      menu_url: '#',
-      menus: [
-        [
+          },
           {
             menus: [
               {
-                menu_name: 'test 3 col 1 row 1',
+                menu_name: 'Обувки',
                 menu_url: '#',
                 menus: [
                   {
-                    menu_name: 'test 3 col 1 row 1 subcat 1',
+                    menu_name: 'Ежедневни',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 3 col 1 row 1 subcat 2',
+                    menu_name: 'Джапанки',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 3 col 1 row 1 subcat 3',
+                    menu_name: 'Сандали',
                     menu_url: '#'
                   }
                 ]
               }
             ]
-          }
-        ]
-      ]
-    },
-    {
-      menu_name: 'test 4',
-      menu_url: '#',
-      menus: [
-        [
+          },
           {
             menus: [
               {
-                menu_name: 'test 4 col 1 row 1',
+                menu_name: 'Аксесоари',
                 menu_url: '#',
                 menus: [
                   {
-                    menu_name: 'test 4 col 1 row 1 subcat 1',
+                    menu_name: 'Раници',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 4 col 1 row 1 subcat 2',
+                    menu_name: 'Чорапи',
                     menu_url: '#'
                   },
                   {
-                    menu_name: 'test 4 col 1 row 1 subcat 3',
-                    menu_url: '#'
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      ]
-    },
-    {
-      menu_name: 'test 5',
-      menu_url: '#',
-      menus: [
-        [
-          {
-            menu_type: 'hasLeftBorder',
-            menus: [
-              {
-                menu_name: 'test 5 col 1 row 1',
-                menu_url: '#',
-                menus: [
-                  {
-                    menu_name: 'test 5 col 1 row 1 subcat 1',
-                    menu_url: '#'
-                  },
-                  {
-                    menu_name: 'test 5 col 1 row 1 subcat 2',
-                    menu_url: '#'
-                  },
-                  {
-                    menu_name: 'test 5 col 1 row 1 subcat 3',
-                    menu_url: '#'
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      ]
-    },
-    {
-      menu_name: 'test 6',
-      menu_url: '#',
-      menus: [
-        [
-          {
-            menu_type: 'hasLeftBorder',
-            menus: [
-              {
-                menu_name: 'test 6 col 1 row 1',
-                menu_url: '#',
-                menus: [
-                  {
-                    menu_name: 'test 6 col 1 row 1 subcat 1',
-                    menu_url: '#'
-                  },
-                  {
-                    menu_name: 'test 6 col 1 row 1 subcat 2',
-                    menu_url: '#'
-                  },
-                  {
-                    menu_name: 'test 6 col 1 row 1 subcat 3',
+                    menu_name: 'Портмонета',
                     menu_url: '#'
                   }
                 ]
