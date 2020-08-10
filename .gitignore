@@ -2,3 +2,4 @@ node_modules
 lib
 .next
 .DS_Store
+yarn-error.log
